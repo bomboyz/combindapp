@@ -39,16 +39,14 @@ $colors: (
   danger:     #f53d3d,
   light:      #f4f4f4,
   dark:       #222,
-  lightbutton:  #8000ff
+  lightbutton:   #f53d3d,
+  pink1:#FF3366,
 );
 
-// Android and IOS
-$tabs-backgroud: color($colors,lightbutton);
-$tabs-tab-color-inactive: color($colors,light);
-$tabs-tab-color-active: color($colors,light);
-$toolbar-backgroud: color($colors,lightbutton);
-
-
+$tabs-background:color($colors, light);
+$tabs-tab-color-inactive:color($colors,light);
+$tabs-tab-color-active:color($colors,dark);
+$toolbar-background:color($colors, light);
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here
@@ -59,10 +57,9 @@ $toolbar-backgroud: color($colors,lightbutton);
 // App Material Design Variables
 // --------------------------------------------------
 // Material Design only Sass variables can go here
-$tabs-md-tab-text-color:color($colors,secondary);
-$tabs-md-tab-icon-color:color($colors,secondary);
 
-
+$tabs-md-tab-text-color:color($colors,dark);
+$tabs-md-tab-icon-color:color($colors,dark);
 
 // App Windows Variables
 // --------------------------------------------------
@@ -83,7 +80,7 @@ $tabs-md-tab-icon-color:color($colors,secondary);
 
 // Ionicons
 // --------------------------------------------------
-// The premium icon font for Ionic. For more info, please see:
+// The premium icon font for Ionic. Fo  r more info, please see:
 // http://ionicframework.com/docs/ionicons/
 
 @import "ionic.ionicons";
