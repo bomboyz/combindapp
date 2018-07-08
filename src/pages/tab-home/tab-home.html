@@ -12,14 +12,14 @@
       <button ion-button icon-only>
         <ion-icon name="search"></ion-icon>
       </button>
-        <span *ngIf="loginStatus==true">
-            <button ion-button icon-only (click)="register()">
-              <ion-icon name="person-add"></ion-icon>
-            </button>
-            <button ion-button icon-only (click)="login()">
-              <ion-icon name="lock"></ion-icon>
-            </button>
-        </span>
+      <span *ngIf="loginStatus==true">
+        <button ion-button icon-only (click)="register()">
+          <ion-icon name="person-add"></ion-icon>
+        </button>
+        <button ion-button icon-only (click)="login()">
+          <ion-icon name="lock"></ion-icon>
+        </button>
+      </span>
       <button ion-button icon-only color="white">
         <ion-icon name="more"></ion-icon>
       </button>

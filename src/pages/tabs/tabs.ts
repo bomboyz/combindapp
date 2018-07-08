@@ -13,10 +13,13 @@ import { TabCoursePage } from '../tab-course/tab-course';
 })
 export class TabsPage {
   tab1Root: any =TabHomePage;
-  tab2Root: any =TabArticlePage;
+  tab2Root: any =TabCoursePage;
   tab3Root: any =TabContactPage;
   tab4Root: any =TabServicePage;
-  tab5Root: any =TabCoursePage;
+  tab5Root: any =TabArticlePage;
+
+  // TabCoursePage
+  // TabArticlePage
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }

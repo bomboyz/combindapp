@@ -11,19 +11,19 @@ import { WebapiServiceProvider } from '../../providers/webapi-service/webapi-ser
 })
 export class LoginPage {
 
-   // กำหนดตัวแปรผูกฟอร์ม (Model)
-   userData = {
-    "username":"",
-    "password":""
+  // กำหนดตัวแปรผูกฟอร์ม (Model)
+  userData = {
+    "username": "",
+    "password": ""
   }
 
   // ตัวแปรรับข้อมูลจาก api
-  responseData:any;
+  responseData: any;
 
   constructor(
-    public navCtrl: NavController, 
-    public navParams: NavParams, 
-    public app:App,
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public app: App,
     public alertCtrl: AlertController,
     public webapi: WebapiServiceProvider) {
   }
@@ -32,43 +32,41 @@ export class LoginPage {
     console.log('ionViewDidLoad LoginPage');
   }
 
-  register(){
+  register() {
     this.navCtrl.setRoot(RegisterPage);
   }
 
-  gotoDashboard()
-  {
+  gotoDashboard() {
     this.navCtrl.setRoot(TabsPage);
   }
 
-  login()
-  {
+  login() {
     //console.log(this.userData);
-    this.webapi.postData(this.userData,'login.php').then((result)=>{
+    this.webapi.postData(this.userData, 'login.php').then((result) => {
       this.responseData = result;
       //console.log(this.responseData);
-      if(this.responseData.userData){
+      if (this.responseData.userData) {
         let alert = this.alertCtrl.create({
-          title:"สถานะการเข้าระบบ",
-          subTitle:"เข้าระบบเรียบร้อยแล้ว",
-          buttons:['Dismiss']
+          title: "สถานะการเข้าระบบ",
+          subTitle: "เข้าระบบเรียบร้อยแล้ว",
+          buttons: ['Dismiss']
         });
         alert.present();
 
         // บันทึกข้อมูลลงใน Local Storage\
-        localStorage.setItem('userData',JSON.stringify(this.responseData));
+        localStorage.setItem('userData', JSON.stringify(this.responseData));
 
         // ส่งกลับไปหน้าหลัก (dashboard)
         this.navCtrl.setRoot(TabsPage);
-      }else{
+      } else {
         let alert = this.alertCtrl.create({
-          title:"มีข้อผิดพลาด",
-          subTitle:"เข้าระบบไม่ถูกต้อง ลองใหม่",
-          buttons:['Dismiss']
+          title: "มีข้อผิดพลาด",
+          subTitle: "เข้าระบบไม่ถูกต้อง ลองใหม่",
+          buttons: ['Dismiss']
         });
         alert.present();
       }
-    },(err)=>{
+    }, (err) => {
       console.log(err);
     });
   }

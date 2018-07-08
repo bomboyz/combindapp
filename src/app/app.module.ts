@@ -20,6 +20,17 @@ import { LoginPage } from '../pages/login/login';
 import { WebapiServiceProvider } from '../providers/webapi-service/webapi-service';
 import { HttpModule } from '@angular/http';
 import { GlobalProvider } from '../providers/global/global';
+import { CoursedetailPage } from '../pages/coursedetail/coursedetail';
+
+var config = {
+  apiKey: "AIzaSyALss2cmX36rdML8suRP9sHSvzDwIj6M6g",
+  authDomain: "combinddapp.firebaseapp.com",
+  databaseURL: "https://combinddapp.firebaseio.com",
+  projectId: "combinddapp",
+  storageBucket: "combinddapp.appspot.com",
+  messagingSenderId: "626567880374"
+};
+
 @NgModule({
   declarations: [
     MyApp,
@@ -34,7 +45,8 @@ import { GlobalProvider } from '../providers/global/global';
     TabServicePage,
     TabsPage,
     RegisterPage,
-    LoginPage
+    LoginPage,
+    CoursedetailPage
   ],
   imports: [
     BrowserModule,
@@ -55,7 +67,8 @@ import { GlobalProvider } from '../providers/global/global';
     TabServicePage,
     TabsPage,
     RegisterPage,
-    LoginPage
+    LoginPage,
+    CoursedetailPage
   ],
   providers: [
     StatusBar,

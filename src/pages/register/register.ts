@@ -13,15 +13,15 @@ export class RegisterPage {
 
   // กำหนดตัวแปรผูกฟอร์ม (Model)
   userData = {
-    "fullname":"",
-    "email":"",
-    "tel":"",
-    "username":"",
-    "password":""
+    "fullname": "",
+    "email": "",
+    "tel": "",
+    "username": "",
+    "password": ""
   }
 
   // ตัวแปรรับข้อมูลจาก api
-  responseData:any;
+  responseData: any;
 
   constructor(
     public navCtrl: NavController,
@@ -43,22 +43,22 @@ export class RegisterPage {
     this.navCtrl.setRoot(TabsPage);
   }
 
-  signup(){
+  signup() {
     //console.log(this.userData);
-    this.webapi.postData(this.userData,'register.php').then((result)=>{
+    this.webapi.postData(this.userData, 'register.php').then((result) => {
       this.responseData = result;
       //console.log(this.responseData);
-      if(this.responseData.userData){
+      if (this.responseData.userData) {
         let alert = this.alertCtrl.create({
-          title:"สถานะการลงทะเบียน",
-          subTitle:"ลงทะเบียนเรียบร้อยแล้ว",
-          buttons:['Dismiss']
+          title: "สถานะการลงทะเบียน",
+          subTitle: "ลงทะเบียนเรียบร้อยแล้ว",
+          buttons: ['Dismiss']
         });
         alert.present();
         // ส่งกลับไปหน้าหลัก (dashboard)
         this.navCtrl.setRoot(TabsPage);
       }
-    },(err)=>{
+    }, (err) => {
       console.log(err);
     });
   }
